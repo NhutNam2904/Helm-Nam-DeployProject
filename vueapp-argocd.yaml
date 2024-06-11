@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vue-app  # Tên thường viết in thường theo chuẩn Kubernetes
+  namespace: argocd
+spec:
+  destination:
+    namespace: vueapp
+    server: 'https://kubernetes.default.svc'
+  source:
+    repoURL: 'https://github.com/NhutNam2904/Helm-Nam-DeployProject.git'
+    path: vueapp-chart-project
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+
