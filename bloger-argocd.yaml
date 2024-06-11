@@ -1,18 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: Bloger
+  name: bloger-app  # Tên thường viết in thường theo chuẩn Kubernetes
   namespace: argocd
 spec:
   destination:
     namespace: bloger
     server: 'https://kubernetes.default.svc'
   source:
-    repoURL: 'https://github.com/NhutNam2904/test-argocd'
-    path: lab1
+    repoURL: 'https://github.com/NhutNam2904/Helm-Nam-DeployProject.git'
+    path: bloger-chart-project
     targetRevision: HEAD
-    directory:
-      recurse: true
+    helm:
+      valueFiles:
+        - values.yaml
   project: default
   syncPolicy:
     automated:
@@ -20,3 +21,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+

@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 5
+replicaCount: 5    #5 pod
 
 image:
   repository: nam2904/react-blog-jenkins
