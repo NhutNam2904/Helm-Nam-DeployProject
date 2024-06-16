@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.service.serviceNameOverride | default (include "bloger-chart-project.fullname" .) }}
+  name: {{ include "bloger-chart-project.fullname" . }}
   labels:
     {{- include "bloger-chart-project.labels" . | nindent 4 }}
 spec:
