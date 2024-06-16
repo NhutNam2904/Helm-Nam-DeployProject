@@ -51,13 +51,13 @@ ingress:
   hosts:
     - host: k8s-master
       paths:
-        - path: /app1
-          pathType: Prefix
-          backend:
+          - backend:
             service:
               name: bloger-app-bloger-chart-project  # Tên của service để định tuyến
               port:
                 number: 80  # Đảm bảo có khoảng trống giữa "number" và "80"
+             path: /app1
+             pathType: Prefix
 
 
   #tls: []
