@@ -39,7 +39,6 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000  
 service:
-  serviceNameOverride: service-bloger
   type: ClusterIP
   port: 80
 ingress:
