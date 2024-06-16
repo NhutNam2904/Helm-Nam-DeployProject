@@ -42,7 +42,6 @@ service:
   serviceNameOverride: service-bloger
   type: ClusterIP
   port: 80
-
 ingress:
   enabled: true
   className: ""  # Nếu không có tên lớp Ingress Controller cụ thể, để trống
