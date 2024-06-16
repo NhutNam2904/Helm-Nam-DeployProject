@@ -54,7 +54,7 @@ ingress:
           pathType: Prefix
           backend:
             service:
-              name: bloger-app-bloger-chart-project
+              name:
               port:
                 number: 80  # Đảm bảo có khoảng trống giữa "number" và "80"
 
