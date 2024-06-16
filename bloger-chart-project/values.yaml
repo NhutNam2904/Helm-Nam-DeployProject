@@ -38,7 +38,7 @@ securityContext: {}
   # readOnlyRootFilesystem: true
   # runAsNonRoot: true
   # runAsUser: 1000
-
+  
 service:
   serviceNameOverride: service-bloger
   type: ClusterIP
@@ -46,8 +46,8 @@ service:
 
 ingress:
   enabled: true
-  className: ""
-  annotations: {}
+  className: ""  # Nếu không có tên lớp Ingress Controller cụ thể, để trống
+  annotations:
     kubernetes.io/ingress.class: nginx
     #kubernetes.io/tls-acme: "true"
   hosts:
@@ -59,7 +59,8 @@ ingress:
             service:
               name: service-bloger
               port:
-                number:80
+                number: 80  # Cần có khoảng trống giữa "number" và "80"
+
   #tls: []
   #  - secretName: chart-example-tls
   #    hosts:
