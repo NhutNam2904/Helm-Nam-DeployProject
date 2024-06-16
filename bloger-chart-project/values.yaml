@@ -51,7 +51,7 @@ ingress:
   hosts:
     - host: k8s-master
       paths:
-        - path: /app
+        - path: /app1
           pathType: Prefix
           backend:
             service:
