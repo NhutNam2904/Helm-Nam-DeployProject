@@ -48,16 +48,16 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-hosts:
-  - host: k8s-master
-      paths:
-        - path: /app1
-          pathType: Prefix
-          backend:
-            service:
-              name: bloger-app-bloger-chart-project  # Tên của service để định tuyến
-              port:
-                number: 80  # Cổng của service
+  hosts:
+    - host: k8s-master
+        paths:
+          - path: /app1
+            pathType: Prefix
+            backend:
+              service:
+                name: bloger-app-bloger-chart-project  # Tên của service để định tuyến
+                port:
+                  number: 80  # Cổng của service
 
   #tls: []
   #  - secretName: chart-example-tls
