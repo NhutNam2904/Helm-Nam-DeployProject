@@ -41,6 +41,7 @@ securityContext: {}
 service:
   type: ClusterIP
   port: 80
+
 ingress:
   enabled: true
   className: ""  # Nếu không có tên lớp Ingress Controller cụ thể, để trống
@@ -53,10 +54,11 @@ ingress:
         - path: /
           pathType: Prefix
           backend:
-            service: bloger-app-bloger-chart-project
-              name:
+            service:
+              name: bloger-app-bloger-chart-project  # Tên của service để định tuyến
               port:
                 number: 80  # Đảm bảo có khoảng trống giữa "number" và "80"
+
 
   #tls: []
   #  - secretName: chart-example-tls
