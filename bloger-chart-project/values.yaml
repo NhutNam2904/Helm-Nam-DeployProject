@@ -52,14 +52,13 @@ ingress:
   hosts:
     - host: k8s-master
       paths:
-        - path: /
-          pathType: ImplementationSpecific
-          backend:
-            service:
-              name: service-bloger
-              port:
+      - backend:
+          service:
+             name: service-bloger
+             port:
                 number: 80  # Cần có khoảng trống giữa "number" và "80"
-
+         path: /
+         pathType: Prefix
   #tls: []
   #  - secretName: chart-example-tls
   #    hosts:
