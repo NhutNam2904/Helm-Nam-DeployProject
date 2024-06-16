@@ -50,7 +50,7 @@ ingress:
   hosts:
     - host: k8s-master
       paths:
-        - path: /
+        - path: /bloger
           pathType: Prefix
           backend:
             service: bloger-app-bloger-chart-project
