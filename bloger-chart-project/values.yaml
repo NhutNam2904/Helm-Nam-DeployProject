@@ -40,7 +40,7 @@ securityContext: {}
   # runAsUser: 1000  
 service:
   type: ClusterIP
-  port: 8080
+  port: 80
 
 ingress:
   enabled: true
@@ -57,7 +57,7 @@ ingress:
             service:
               name: bloger-app-bloger-chart-project  # Tên của service để định tuyến
               port:
-                number: 8080  # Cổng của service
+                number: 80 # Cổng của service
 
   #tls: []
   #  - secretName: chart-example-tls
